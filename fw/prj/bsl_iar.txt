@@ -1,0 +1,12 @@
+//Write RAM USB BSL to the device
+MODE 5xx USB
+RX_PASSWORD bsl_pass_erase.txt
+DELAY 1000
+RX_PASSWORD bsl_pass_valid.txt
+RX_DATA_BLOCK_FAST BSL_RAM.00.05.04.34.txt
+SET_PC 0x2504
+DELAY 3000
+//Start the RAM USB BSL application to download firmware
+MODE 5xx USB
+RX_DATA_BLOCK_FAST ..\GPS_Logger(IAR).txt
+SET_PC 0x8000 
